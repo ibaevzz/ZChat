@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "152099097661",
+    "project_id": "zchat-2407b",
+    "storage_bucket": "zchat-2407b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152099097661:android:66b3540aa9221818fc6e54",
+        "android_client_info": {
+          "package_name": "com.ibaevzz.zchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152099097661-uh2tc88mi6ojvjeup7c6j4pdr7tsojdh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEMdKyEO85GZlQ1lX_mOKIpdYC_84kUGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152099097661-uh2tc88mi6ojvjeup7c6j4pdr7tsojdh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
