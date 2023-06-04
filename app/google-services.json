@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "152099097661-89m5fgm6e9peg930vsdop5q6r08r17mu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ibaevzz.zchat",
+            "certificate_hash": "8606996b9cbd57e6d46bbb679cbf54069ca25616"
+          }
+        },
+        {
           "client_id": "152099097661-uh2tc88mi6ojvjeup7c6j4pdr7tsojdh.apps.googleusercontent.com",
           "client_type": 3
         }
