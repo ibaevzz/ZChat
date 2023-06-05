@@ -1,5 +1,6 @@
 package com. ibaevzz.zchat
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -73,6 +74,8 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
+    //Проверяем был ли отправлен код
+    @SuppressLint("SetTextI18n")
     private fun makeVisible(){
         if(viewModel.isSendCode){
             binding.phone.visibility= View.INVISIBLE
@@ -83,8 +86,7 @@ class AuthActivity : AppCompatActivity() {
 
             if(!viewModel.isCompleted) {
                 viewModel.startTimer().observe(this@AuthActivity) {
-                    if (it != 0) binding.newPhone.text =
-                        "Изменить номер или отправить повторно через: $it"
+                    if (it != 0) binding.newPhone.text = "Изменить номер или отправить повторно через: $it"
                     else binding.newPhone.text = "Изменить номер или отправить повторно"
                 }
             }
@@ -99,6 +101,7 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
+    //Проверка номера и запрос кода
     private fun sendPhone(){
         val phone = editText?.text.toString()
         if(phone.length!=12){
@@ -141,6 +144,7 @@ class AuthActivity : AppCompatActivity() {
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
 
+    //Проверка кода
     private fun sendCode(){
         binding.frame.visibility = View.VISIBLE
 
@@ -164,6 +168,7 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
+    //Поменять номер
     private fun repeat(){
         viewModel.isSendCode = false
         viewModel.isCompleted = false
