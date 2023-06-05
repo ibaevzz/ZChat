@@ -1,4 +1,4 @@
-package com. ibaevzz.zchat
+package com.ibaevzz.zchat
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -109,6 +109,8 @@ class AuthActivity : AppCompatActivity() {
             return
         }
         binding.frame.visibility = View.VISIBLE
+        binding.sendPhone.isEnabled = false
+        binding.phone.isEnabled = false
 
         val options = PhoneAuthOptions.newBuilder(Firebase.auth)
             .setPhoneNumber(phone)
@@ -123,6 +125,9 @@ class AuthActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish()
                         } else {
+                            binding.frame.visibility = View.INVISIBLE
+                            binding.sendPhone.isEnabled = true
+                            binding.phone.isEnabled = true
                             //TODO
                         }
                     }
@@ -130,6 +135,8 @@ class AuthActivity : AppCompatActivity() {
 
                 override fun onVerificationFailed(exception: FirebaseException) {
                     binding.frame.visibility = View.INVISIBLE
+                    binding.sendPhone.isEnabled = true
+                    binding.phone.isEnabled = true
                     //TODO
                 }
 
@@ -137,6 +144,8 @@ class AuthActivity : AppCompatActivity() {
                     viewModel.isSendCode = true
                     this@AuthActivity.id = id
                     binding.frame.visibility = View.INVISIBLE
+                    binding.sendPhone.isEnabled = true
+                    binding.phone.isEnabled = true
                     makeVisible()
                 }
 
@@ -147,6 +156,9 @@ class AuthActivity : AppCompatActivity() {
     //Проверка кода
     private fun sendCode(){
         binding.frame.visibility = View.VISIBLE
+        binding.code.isEnabled = false
+        binding.sendPhone.isEnabled = false
+        binding.newPhone.isEnabled = false
 
         val code = binding.code.editText?.text.toString()
 
@@ -160,10 +172,17 @@ class AuthActivity : AppCompatActivity() {
                     finish()
                 } else {
                     binding.frame.visibility = View.INVISIBLE
+                    binding.code.isEnabled = true
+                    binding.sendPhone.isEnabled = true
+                    binding.newPhone.isEnabled = true
                     //TODO
                 }
             }
         }else{
+            binding.frame.visibility = View.INVISIBLE
+            binding.code.isEnabled = true
+            binding.sendPhone.isEnabled = true
+            binding.newPhone.isEnabled = true
             //TODO
         }
     }

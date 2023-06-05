@@ -1,5 +1,6 @@
 package com.ibaevzz.zchat
 
+import android.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ibaevzz.zchat.databinding.ActivityMainBinding
@@ -12,5 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
     }
 }
