@@ -18,6 +18,15 @@
             app:layout_scrollFlags="scroll|enterAlways"/>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <TextView
+        android:id="@+id/isChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Чатов нет"
+        android:visibility="invisible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chats"
         android:layout_width="match_parent"
@@ -25,11 +34,12 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addChat"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_margin="20dp"
         android:layout_gravity="bottom|right"
-        app:layout_behavior=".FABBehavior"
-        />
+        android:src="@drawable/create"
+        app:layout_behavior=".FABBehavior"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
